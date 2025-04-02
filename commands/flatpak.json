@@ -1,0 +1,62 @@
+{
+    "Install a Flatpak": {
+        "command": "flatpak install <package>"
+    },
+    "Remove a Flatpak": {
+        "command": "flatpak uninstall <package>"
+    },
+    "Update All Flatpaks": {
+        "command": "flatpak update"
+    },
+    "List Installed Flatpaks": {
+        "command": "flatpak list"
+    },
+    "Find Flatpak Packages": {
+        "command": "flatpak search <keyword>"
+    },
+    "Show Installed Flatpak Details": {
+        "command": "flatpak info <package>"
+    },
+    "List All Installed Flatpaks (with runtime)": {
+        "command": "flatpak list --app --runtime"
+    },
+    "Check for Updates": {
+        "command": "flatpak update --app --runtime"
+    },
+    "Remove Unused Runtimes": {
+        "command": "flatpak uninstall --unused"
+    },
+    "Repair Flatpak Installation": {
+        "command": "flatpak repair"
+    },
+    "Show App Permissions": {
+        "command": "flatpak permission-show"
+    },
+    "Modify App Permissions": {
+        "command": "flatpak permission-set <group> <app> <permissions>"
+    },
+    "Reset All Permissions": {
+        "command": "flatpak permission-reset"
+    },
+    "Run a Flatpak App": {
+        "command": "flatpak run <package>"
+    },
+    "Run App with Debugging": {
+        "command": "flatpak run --command=sh <package>"
+    },
+    "List All Repositories": {
+        "command": "flatpak remotes"
+    },
+    "Add a Repository": {
+        "command": "flatpak remote-add --if-not-exists <repo_name> <repo_url>"
+    },
+    "Remove a Repository": {
+        "command": "flatpak remote-delete <repo_name>"
+    },
+    "List Installed Runtimes": {
+        "command": "flatpak list --runtime"
+    },
+    "Update Runtimes": {
+        "command": "flatpak update"
+    }
+}

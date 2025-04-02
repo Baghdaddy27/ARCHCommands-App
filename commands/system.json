@@ -1,0 +1,92 @@
+{
+    "Check Disk Usage": {
+        "command": "df -h"
+    },
+    "Find Large Files": {
+        "command": "du -ah / | sort -rh | head -20"
+    },
+    "Check Disk Health (SMART)": {
+        "command": "sudo smartctl -a /dev/sdX"
+    },
+    "Check Filesystem for Errors": {
+        "command": "sudo fsck -f /dev/sdX"
+    },
+    "Defragment ext4 Filesystem": {
+        "command": "sudo e4defrag /dev/sdX"
+    },
+    "Enable TRIM for SSDs": {
+        "command": "sudo fstrim -v /"
+    },
+    "View System Logs": {
+        "command": "journalctl -xe"
+    },
+    "Show Kernel Logs": {
+        "command": "dmesg | less"
+    },
+    "Check Boot Errors": {
+        "command": "journalctl -b -p err"
+    },
+    "Check Failed Systemd Services": {
+        "command": "systemctl --failed"
+    },
+    "Monitor CPU Usage": {
+        "command": "top"
+    },
+    "Set CPU to Performance Mode": {
+        "command": "echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor"
+    },
+    "Clear RAM Cache": {
+        "command": "sudo sync; echo 3 | sudo tee /proc/sys/vm/drop_caches"
+    },
+    "Check Memory Usage": {
+        "command": "free -h"
+    },
+    "Check Active Network Interfaces": {
+        "command": "ip addr show"
+    },
+    "Restart Network Manager": {
+        "command": "sudo systemctl restart NetworkManager"
+    },
+    "Check Open Ports": {
+        "command": "sudo netstat -tulnp"
+    },
+    "Flush DNS Cache": {
+        "command": "sudo systemd-resolve --flush-caches"
+    },
+    "Clear Package Cache (Pacman)": {
+        "command": "sudo pacman -Sc"
+    },
+    "Remove Unused Packages": {
+        "command": "sudo pacman -Rns $(pacman -Qdtq)"
+    },
+    "Clean Journals": {
+        "command": "sudo journalctl --vacuum-time=7d"
+    },
+    "Optimize Filesystem": {
+        "command": "sudo tune2fs -o journal_data_writeback /dev/sdX"
+    },
+    "List PCI Devices": {
+        "command": "lspci -v"
+    },
+    "List USB Devices": {
+        "command": "lsusb"
+    },
+    "Monitor Sensors": {
+        "command": "sensors"
+    },
+    "Check Battery Health": {
+        "command": "upower -i /org/freedesktop/UPower/devices/battery_BAT0"
+    },
+    "List Enabled Services": {
+        "command": "systemctl list-unit-files --state=enabled"
+    },
+    "Disable a Startup Service": {
+        "command": "sudo systemctl disable <service>"
+    },
+    "Update GRUB": {
+        "command": "sudo grub-mkconfig -o /boot/grub/grub.cfg"
+    },
+    "Rebuild Initramfs": {
+        "command": "sudo mkinitcpio -P"
+    }
+}

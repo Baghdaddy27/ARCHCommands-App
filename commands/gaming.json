@@ -1,0 +1,80 @@
+{
+    "Enable Steam Play for All Titles": {
+        "command": "steam steam://open/settings > Compatibility > Enable Steam Play"
+    },
+    "Run a Game with Proton": {
+        "command": "STEAM_COMPAT_DATA_PATH=~/.steam/steam/steamapps/compatdata/ proton run <game.exe>"
+    },
+    "Check Installed Proton Versions": {
+        "command": "ls ~/.steam/root/compatibilitytools.d/"
+    },
+    "Force a Specific Proton Version": {
+        "command": "STEAM_COMPAT_DATA_PATH=~/.steam/steam/steamapps/compatdata/ PROTON_VERSION=<version> proton run <game.exe>"
+    },
+    "Install Wine": {
+        "command": "sudo pacman -S wine wine-mono wine-gecko winetricks"
+    },
+    "Create a Wine Prefix": {
+        "command": "WINEPREFIX=~/.wine64 WINEARCH=win64 winecfg"
+    },
+    "Install a Windows App with Wine": {
+        "command": "WINEPREFIX=~/.wine wine <installer.exe>"
+    },
+    "Run a Windows App with Wine": {
+        "command": "WINEPREFIX=~/.wine wine <program.exe>"
+    },
+    "Install Lutris": {
+        "command": "sudo pacman -S lutris"
+    },
+    "Run a Game with Lutris": {
+        "command": "lutris <game_name>"
+    },
+    "Install DXVK": {
+        "command": "WINEPREFIX=~/.wine setup_dxvk install"
+    },
+    "Check Vulkan Support": {
+        "command": "vulkaninfo | less"
+    },
+    "List Vulkan Drivers": {
+        "command": "ls /usr/share/vulkan/icd.d/"
+    },
+    "Check AMD GPU": {
+        "command": "lspci | grep -i vga"
+    },
+    "Install AMD Drivers": {
+        "command": "sudo pacman -S mesa vulkan-radeon lib32-mesa lib32-vulkan-radeon"
+    },
+    "Check GPU Usage": {
+        "command": "radeontop"
+    },
+    "Set AMD Performance Mode": {
+        "command": "echo high | sudo tee /sys/class/drm/card0/device/power_dpm_force_performance_level"
+    },
+    "Check NVIDIA GPU": {
+        "command": "lspci | grep -i nvidia"
+    },
+    "Install NVIDIA Drivers": {
+        "command": "sudo pacman -S nvidia nvidia-utils nvidia-settings"
+    },
+    "Check GPU Processes": {
+        "command": "nvidia-smi"
+    },
+    "Enable Persistence Mode": {
+        "command": "sudo nvidia-persistenced --verbose"
+    },
+    "Enable GameMode": {
+        "command": "gamemoderun %command%"
+    },
+    "Monitor System Resources": {
+        "command": "htop"
+    },
+    "Monitor FPS": {
+        "command": "Mangohud %command%"
+    },
+    "Monitor Temps": {
+        "command": "sensors"
+    },
+    "Optimize CPU Governor for Gaming": {
+        "command": "echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor"
+    }
+}

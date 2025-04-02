@@ -1,0 +1,135 @@
+# Linux Command Reference App
+
+This is a simple GUI application for quickly referencing and executing Linux commands on **Arch Linux** using **Tkinter**. The app loads command categories dynamically from JSON files and allows users to copy or execute commands directly.
+
+## Features
+
+✅ Tabbed interface for different command categories (Arch, Gaming, System, Flatpak, etc.)\
+✅ Search functionality to quickly find commands\
+✅ Resizable window for better usability\
+✅ Commands are loaded dynamically from JSON files\
+✅ Click to copy or execute commands
+
+
+
+## Installation
+
+### Step 1: Install Dependencies
+
+Since this app runs in a **Python virtual environment**, you’ll need to install the required dependencies:
+
+sh
+sudo pacman -S python python-virtualenv tk
+
+
+### Step 2: Clone the Project
+
+sh
+git clone https://github.com/your-repo/linux-command-helper.git
+cd linux-command-helper
+
+
+### Step 3: Set Up a Virtual Environment
+
+Create a virtual environment and activate it:
+
+sh
+python -m venv venv
+source venv/bin/activate  # On Linux/macOS
+venv\Scripts\activate    # On Windows
+
+
+### Step 4: Install Python Requirements
+
+sh
+pip install -r requirements.txt
+
+
+### Step 5: Run the Application
+
+sh
+python app.py
+
+
+
+
+## Configuration
+
+### JSON Command Files
+
+All command categories are stored in the `commands/` directory. Each category (Arch, Gaming, System, Flatpak) has its own JSON file, structured like this:
+
+json
+{
+    "Update System": {
+        "command": "sudo pacman -Syu"
+    },
+    "Install a Package": {
+        "command": "sudo pacman -S <package>"
+    }
+}
+
+
+You can **add, modify, or remove** commands by editing the JSON files without changing the main Python script.
+
+
+
+## Optional: Create a Desktop Launcher
+
+To run the app from your desktop, create a `.desktop` file:
+
+sh
+echo "[Desktop Entry]
+Name=Linux Command Helper
+Exec=/home/user/linux-command-helper/venv/bin/python /home/user/linux-command-helper/app.py
+Icon=utilities-terminal
+Terminal=false
+Type=Application
+Categories=Utility;" > ~/.local/share/applications/linux-command-helper.desktop
+
+
+Then, make it executable:
+
+sh
+chmod +x ~/.local/share/applications/linux-command-helper.desktop
+
+
+
+
+## Troubleshooting
+
+❓ **Issue: The app does not start**\
+✅ Ensure you are in the correct virtual environment:
+
+sh
+source venv/bin/activate
+
+
+✅ Check for missing dependencies:
+
+sh
+pip install -r requirements.txt
+
+
+✅ Verify that you have Tkinter installed:
+
+sh
+python -c "import tkinter; print(tkinter.TkVersion)"
+
+
+❓ **Issue: JSON files are missing**\
+✅ Ensure that the `commands/` directory exists and contains JSON files.
+
+
+
+## Contributing
+
+Feel free to submit **pull requests** or **feature requests** on the GitHub repository.
+
+
+
+## License
+
+This project is open-source and licensed under the **MIT License**.
+
+

@@ -1,0 +1,137 @@
+{
+    "Update System": {
+        "command": "sudo pacman -Syu"
+    },
+    "Full System Upgrade": {
+        "command": "sudo pacman -Syyu"
+    },
+    "Install a Package": {
+        "command": "sudo pacman -S <package>"
+    },
+    "Remove a Package": {
+        "command": "sudo pacman -Rns <package>"
+    },
+    "List Installed Packages": {
+        "command": "pacman -Q"
+    },
+    "Search for a Package": {
+        "command": "pacman -Ss <keyword>"
+    },
+    "Show Package Info": {
+        "command": "pacman -Qi <package>"
+    },
+    "Clean Cache": {
+        "command": "sudo pacman -Sc"
+    },
+    "Remove Orphans": {
+        "command": "sudo pacman -Rns $(pacman -Qdtq)"
+    },
+    "Install yay": {
+        "command": "sudo pacman -S yay"
+    },
+    "Install an AUR Package": {
+        "command": "yay -S <package>"
+    },
+    "Update AUR Packages": {
+        "command": "yay -Syu"
+    },
+    "Search AUR": {
+        "command": "yay -Ss <package>"
+    },
+    "Remove AUR Package": {
+        "command": "yay -Rns <package>"
+    },
+    "Check Systemd Services": {
+        "command": "systemctl list-units --type=service"
+    },
+    "Start a Service": {
+        "command": "sudo systemctl start <service>"
+    },
+    "Enable a Service": {
+        "command": "sudo systemctl enable <service>"
+    },
+    "Restart a Service": {
+        "command": "sudo systemctl restart <service>"
+    },
+    "Stop a Service": {
+        "command": "sudo systemctl stop <service>"
+    },
+    "View System Logs": {
+        "command": "journalctl -xe"
+    },
+    "Show Boot Log": {
+        "command": "journalctl -b"
+    },
+    "Change Password": {
+        "command": "passwd"
+    },
+    "Add a New User": {
+        "command": "sudo useradd -m -G users,wheel -s /bin/bash <username>"
+    },
+    "Delete a User": {
+        "command": "sudo userdel -r <username>"
+    },
+    "Change User Group": {
+        "command": "sudo usermod -aG <group> <username>"
+    },
+    "Check User Groups": {
+        "command": "groups <username>"
+    },
+    "Show Network Interfaces": {
+        "command": "ip addr show"
+    },
+    "Enable Network": {
+        "command": "sudo systemctl enable --now NetworkManager"
+    },
+    "Check Active Connections": {
+        "command": "nmcli device status"
+    },
+    "Ping a Host": {
+        "command": "ping -c 4 <hostname>"
+    },
+    "Trace Route": {
+        "command": "traceroute <hostname>"
+    },
+    "List Block Devices": {
+        "command": "lsblk"
+    },
+    "Show Disk Usage": {
+        "command": "df -h"
+    },
+    "Show Directory Size": {
+        "command": "du -sh <directory>"
+    },
+    "Format a Partition": {
+        "command": "mkfs.ext4 /dev/sdX"
+    },
+    "Mount a Drive": {
+        "command": "sudo mount /dev/sdX /mnt"
+    },
+    "Unmount a Drive": {
+        "command": "sudo umount /mnt"
+    },
+    "Check CPU Usage": {
+        "command": "top"
+    },
+    "Interactive System Monitor": {
+        "command": "htop"
+    },
+    "Show Memory Usage": {
+        "command": "free -h"
+    },
+    "Check Disk I/O": {
+        "command": "iostat"
+    },
+    "Check System Temperatures": {
+        "command": "sensors"
+    },
+    "Update GRUB": {
+        "command": "sudo grub-mkconfig -o /boot/grub/grub.cfg"
+    },
+    "Rebuild Initramfs": {
+        "command": "sudo mkinitcpio -P"
+    },
+    "Check Kernel Version": {
+        "command": "uname -r"
+    }
+}
